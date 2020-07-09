@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "185244609774",
+    "firebase_url": "https://fir-mvp-27a3f.firebaseio.com",
+    "project_id": "fir-mvp-27a3f",
+    "storage_bucket": "fir-mvp-27a3f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:185244609774:android:cf433ffb6a5c15541617ff",
+        "android_client_info": {
+          "package_name": "com.spacebar.firebasemvp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "185244609774-p18okgm7ih108krk0f0dda3bqj6n6vo4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7LSCrfRLn_J2LlevEAk5LWR9s481aHkc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "185244609774-p18okgm7ih108krk0f0dda3bqj6n6vo4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

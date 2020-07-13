@@ -6,6 +6,10 @@ public class Player {
     public String position;
     public String key;
 
+    public Player(){
+
+    }
+
     public Player(String name, String age, String position, String key) {
         this.name = name;
         this.age = age;

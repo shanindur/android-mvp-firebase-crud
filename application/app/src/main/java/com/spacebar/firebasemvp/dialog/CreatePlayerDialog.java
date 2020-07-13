@@ -1,4 +1,4 @@
-package com.spacebar.firebasemvp.helper;
+package com.spacebar.firebasemvp.dialog;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

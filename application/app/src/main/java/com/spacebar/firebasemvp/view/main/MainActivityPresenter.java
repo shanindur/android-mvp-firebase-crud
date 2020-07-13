@@ -1,7 +1,9 @@
-package com.spacebar.firebasemvp.core;
+package com.spacebar.firebasemvp.view.main;
 
 import com.google.firebase.database.DatabaseReference;
 import com.spacebar.firebasemvp.model.Player;
+
+import java.util.ArrayList;
 
 public class MainActivityPresenter implements MainActivityContract.Presenter, MainActivityContract.onOperationListener {
 
@@ -16,6 +18,21 @@ public class MainActivityPresenter implements MainActivityContract.Presenter, Ma
     @Override
     public void createNewPlayer(DatabaseReference reference, Player player) {
         mInteractor.performCreatePlayer(reference, player);
+    }
+
+    @Override
+    public void readPlayer(DatabaseReference reference) {
+        mInteractor.performReadPlayer(reference);
+    }
+
+    @Override
+    public void updatePlayer(DatabaseReference reference, Player player) {
+        mInteractor.performUpdatePlayer(reference, player);
+    }
+
+    @Override
+    public void deletePlayer(DatabaseReference reference, Player player) {
+        mInteractor.performDeletePlayer(reference, player);
     }
 
     @Override
@@ -36,5 +53,20 @@ public class MainActivityPresenter implements MainActivityContract.Presenter, Ma
     @Override
     public void onEnd() {
         mView.onProcessEnd();
+    }
+
+    @Override
+    public void onRead(ArrayList<Player> players) {
+        mView.onPlayerRead(players);
+    }
+
+    @Override
+    public void onUpdate(Player player) {
+        mView.onPlayerUpdate(player);
+    }
+
+    @Override
+    public void onDelete(Player player) {
+        mView.OnPlayerDelete(player);
     }
 }

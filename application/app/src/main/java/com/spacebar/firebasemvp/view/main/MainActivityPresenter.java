@@ -31,6 +31,11 @@ public class MainActivityPresenter implements MainActivityContract.Presenter, Ma
     }
 
     @Override
+    public void deletePlayer(DatabaseReference reference, Player player) {
+        mInteractor.performDeletePlayer(reference, player);
+    }
+
+    @Override
     public void onSuccess() {
         mView.onCreatePlayerSuccessful();
     }
@@ -58,5 +63,10 @@ public class MainActivityPresenter implements MainActivityContract.Presenter, Ma
     @Override
     public void onUpdate(Player player) {
         mView.onPlayerUpdate(player);
+    }
+
+    @Override
+    public void onDelete(Player player) {
+        mView.OnPlayerDelete(player);
     }
 }

@@ -57,7 +57,8 @@ public class MainActivityInteractor implements MainActivityContract.Interactor {
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-
+                Player player = dataSnapshot.getValue(Player.class);
+                mListener.onDelete(player);
             }
 
             @Override
@@ -78,12 +79,19 @@ public class MainActivityInteractor implements MainActivityContract.Interactor {
         reference.child(player.getKey()).setValue(player).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
-                if (task.isSuccessful()){
-                    mListener.onEnd();
-                }else {
-                    mListener.onEnd();
-                }
+                mListener.onEnd();
 
+            }
+        });
+    }
+
+    @Override
+    public void performDeletePlayer(DatabaseReference reference, Player player) {
+        mListener.onStart();
+        reference.child(player.getKey()).removeValue().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                mListener.onEnd();
             }
         });
     }

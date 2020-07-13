@@ -103,6 +103,15 @@ public class MainActivity extends AppCompatActivity implements CreatePlayerDialo
     }
 
     @Override
+    public void OnPlayerDelete(Player player) {
+        int index = getIndex(player);
+        mPlaylist.remove(index);
+        mRecycleViewAdapter.notifyItemRemoved(index);
+
+        Toast.makeText(this, "Delete Player " + player.getName(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
     public void updatePlayer(Player player) {
         mPresenter.updatePlayer(mReference, player);
     }
@@ -117,7 +126,8 @@ public class MainActivity extends AppCompatActivity implements CreatePlayerDialo
 
     @Override
     public void onPlayerDeleteClick(int position) {
-
+        Player player = mPlaylist.get(position);
+        mPresenter.deletePlayer(mReference, player);
     }
 
     public int getIndex(Player player){
